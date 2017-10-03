@@ -1,3 +1,11 @@
-button {
-  width: 100%;
+h1 {
+  text-align: center;
+}
+
+.general-btn {
+  width: 29%;
+}
+
+.individual-btn {
+  width: 47%;
 }
