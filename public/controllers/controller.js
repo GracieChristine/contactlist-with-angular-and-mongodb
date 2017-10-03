@@ -30,17 +30,21 @@ app.controller('AppCtrl', function($scope, $http) {
   };
 
   $scope.editContact = function(id) {
-    // console.log(id);
+    console.log(id);
     $http.get('/contactlist/' + id).success(function(response) {
       $scope.contact = response;
     });
   };
 
   $scope.updateContact = function() {
-    // console.log($scope.contact._id);
+    console.log($scope.contact._id);
     $http.put('/contactlist/' + $scope.contact._id, $scope.contact).success(function(response) {
       refresh();
     });
+  };
+
+  $scope.deselectContact = function() {
+    $scope.contact = '';
   }
 
 });
