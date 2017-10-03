@@ -21,11 +21,16 @@ app.get('/contactlist', function(req, res) {
   });
 });
 
-app.post('/contactlist', function (req, res) {
+app.post('/contactlist', function(req, res) {
   console.log(req.body);
   db.contactlist.insert(req.body, function(err, doc) {
     res.json(doc);
   });
+});
+
+app.delete('/contactlist/:id', function(req, res) {
+  const id = req.params.id;
+  console.log(id);
 });
 
 app.listen(3000);
