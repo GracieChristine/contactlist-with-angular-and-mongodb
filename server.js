@@ -2,6 +2,9 @@
 
 const express = require('express');
 const app = express();
+const mongojs = require('mongojs');
+// Indicating which MONGODB database and collection we will be using
+const db = mongojs('contactlist', ['contactlist']);
 
 // Looking for static files inside /public
 app.use(express.static(__dirname + "/public"));
