@@ -1,6 +1,7 @@
 'use strict';
 
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
 const mongojs = require('mongojs');
 // Indicating which MONGODB database and collection we will be using
@@ -8,6 +9,7 @@ const db = mongojs('contactlist', ['contactlist']);
 
 // Looking for static files inside /public
 app.use(express.static(__dirname + "/public"));
+app.use(bodyParser.json());
 
 app.get('/contactlist', function(req, res) {
   console.log("Received a GET request");
@@ -17,7 +19,13 @@ app.get('/contactlist', function(req, res) {
     // Sends the data back to the controller
     res.json(docs);
   });
+});
 
+app.post('/contactlist', function (req, res) {
+  console.log(req.body);
+  // db.contactlist.insert(req.body, function(err, doc) {
+  //   res.json(doc);
+  // });
 });
 
 app.listen(3000);
