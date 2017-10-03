@@ -22,4 +22,8 @@ app.controller('AppCtrl', function($scope, $http) {
     });
   };
 
+  $scope.deleteContact = function(id) {
+    console.log(id);
+  };
+
 })
