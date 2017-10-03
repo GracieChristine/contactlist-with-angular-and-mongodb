@@ -9,5 +9,8 @@ app.controller('AppCtrl', function($scope, $http) {
     $scope.contactlist = response;
   });
 
+  $scope.addContact = function() {
+    console.log($scope.contact);
+  };
 
 })
