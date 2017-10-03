@@ -6,5 +6,9 @@ const app = express();
 // Looking for static files inside /public
 app.use(express.static(__dirname + "/public"));
 
+app.get('/contactlist', function(req, res) {
+  console.log("Received a GET request");
+});
+
 app.listen(3000);
 console.log("Listening and spinning on port 3000");
