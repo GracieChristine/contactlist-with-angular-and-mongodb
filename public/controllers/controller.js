@@ -29,4 +29,11 @@ app.controller('AppCtrl', function($scope, $http) {
     });
   };
 
-})
+  $scope.editContact = function(id) {
+    console.log(id);
+    $http.get('/contactlist/' + id).success(function(response) {
+      $scope.contact = response;
+    });
+  };
+
+});
